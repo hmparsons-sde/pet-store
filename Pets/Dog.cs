@@ -8,7 +8,7 @@ namespace pet_store.Pets // here for organization + specification; namespaces fo
 { // blue keywords are keywords in C# law; green are static
     class Dog // implicitly internal
     {
-        public string Size { get; set; }
+        public string Size { get; set; } //auto-property
         public short Weight { get; private set; }
         public string Name { get; set; }
 
@@ -24,13 +24,12 @@ namespace pet_store.Pets // here for organization + specification; namespaces fo
         // Method signature is the way a method is defined = access modifier + return type + name + parameters
         public void Bark()
         {
-            Console.WriteLine($"{Name}");
+            Console.WriteLine($"{Name} barks noisily.");
         }
 
         public void Eat(string typeOfFood)
         {
-            if (string.Equals(typeOfFood, "healthy food", StringComparison.OrdinalIgnoreCase))
-            // if (typeOfFood.ToLower() == "healthy food")
+            if (typeOfFood.ToLower() == "healthy food")
             {
                 Weight -= 1;
             }

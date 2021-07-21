@@ -1,29 +1,39 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pet_store.Pets // each class has its own file
+namespace pet_store.Pets
 {
     class Tiger
     {
         public string Name { get; set; }
         public string Size { get; set; }
-        public int BodyCount { get; set; }
+        public int NumberOfKills { get; set; }
         public short Speed { get; set; }
 
-        //fields = implicitly private
-        private int _numberOfChomps;
+        int _numberOfBites;
+        public Tiger()
+        {
+            _numberOfBites = 1;
+        }
 
         public void Bite(string handlerName)
         {
-            _numberOfChomps++;
-            Console.WriteLine($"{Name} ate {handlerName}. That's the {_numberOfChomps} time!");
+            _numberOfBites++;
+            if (_numberOfBites > 5)
+            {
+                Console.WriteLine("This is a bitey Tiger");
+            }
+
+            Console.WriteLine($"{Name} the tiger just bit {handlerName}.");
         }
     }
 }
 
 // fields = what we want to track in a class, but not share publicly.
+// fields are implicitly private.
 // field names are prefixed with an underscore and camelCased. Idiomatic, not law.
 // think of a field as a class-level variable.
